@@ -47,7 +47,14 @@ services:
       - TZ=${TZ}
     ports :
       - ${DB_PORT}:3306
-    
+
+  node:
+    image: node
+    tty: true
+    volumes:
+      - ${PROJECT_PATH}:/work
+    working_dir: /work
+
 volumes:
   db-store:
       
